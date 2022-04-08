@@ -1,0 +1,145 @@
+html {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    background-color: #F5CB5C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #E8EDDF;
+}
+
+main {
+    background-color: #242423;
+    min-width: 200px;
+    max-width: 1000px;
+    width: 35%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+main * {
+    margin-top: 1.5rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    max-height: 40vh;
+    overflow-y: scroll;
+}
+
+/* ul scroll bar styles */
+
+ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: #242423;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #333533;
+    border-radius: 1rem;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: #464746;
+}
+
+li:first-child {
+    margin-top: 0.75rem;
+}
+
+li:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+#new-input.no-margin {
+    margin-bottom: 0;
+}
+
+#new-input {
+    width: 100%;
+    height: 1.5rem;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+#new-input::placeholder {
+    color: inherit;
+}
+
+#new-input:focus {
+    outline: none;
+}
+
+@media (max-width: 900px) {
+    main {
+        width: 45%;
+    }
+
+    ul {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        width: 60%;
+    }
+
+    ul {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 16px;
+    }
+
+    main {
+        width: 75%;
+    }
+
+    ul {
+        max-height: 60vh;
+    }
+}
+
+@media (max-width: 350px) {
+    html {
+        font-size: 14px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    ul {
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 300px) {
+    html {
+        font-size: 12px;
+    }
+}
