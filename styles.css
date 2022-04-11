@@ -1,6 +1,7 @@
 html {
     font-family: 'Roboto Mono', monospace;
     font-size: 18px;
+    user-select: none;
 }
 
 body {
@@ -22,6 +23,7 @@ main {
     padding: 1.5rem;
     word-wrap: break-word;
     box-sizing: border-box;
+    position: relative;
 }
 
 main * {
@@ -88,6 +90,15 @@ li:hover {
 
 #new-input:focus {
     outline: none;
+}
+
+#alert {
+    position: absolute;
+    bottom: -4rem;
+    color: #242423;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: none;
 }
 
 @media (max-width: 900px) {

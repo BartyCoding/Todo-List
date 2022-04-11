@@ -1,5 +1,7 @@
 var input = document.getElementById("new-input")
 var todoList = document.getElementById("todo-list")
+let tooManyItemsAlert = document.getElementById("alert")
+let currentTimer = false
 
 let updateInputMargin = () => {
     if (currentItems.length === 0) {
@@ -70,17 +72,28 @@ let saveList = () => {
 
 input.addEventListener("keyup", e => {
     if ((e.key == 'Enter' || e.keyCode === 13) && input.value !== "") {
-        e.preventDefault();
+        if (currentItems.length >= 100) {
+            if (!currentTimer) {
+                tooManyItemsAlert.style.display = "block"
+                currentTimer = true
+                setTimeout(() => {
+                    tooManyItemsAlert.style.display = "none"
+                    currentTimer = false
+                }, 1000)
+            }
+        } else {
+            e.preventDefault();
 
-        let randomId = getRandomId()
+            let randomId = getRandomId()
 
-        addItem(input.value, randomId)
+            addItem(input.value, randomId)
 
-        currentItems.push({ "value": input.value, "id": randomId })
+            currentItems.push({ "value": input.value, "id": randomId })
 
-        updateInputMargin()
-        saveList()
+            updateInputMargin()
+            saveList()
 
-        input.value = ""
+            input.value = ""
+        }
     }
 })
